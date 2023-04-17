@@ -8,13 +8,13 @@ path=input("Give the path of directory having the raw and HQ files=")
 os.chdir(path)
 #opening and reading file and converting from txt to xlsx
 
-#raw file and selecting the required columns
+#raw file and selecting the required columns #From Seqkit
 raw_file= input("Enter raw file name to proceed=")
 File_raw = pd.read_table(raw_file, delimiter = "\t" )
 File_raw.to_excel('File_raw.xlsx', index=False, header=True)
 raw= pd.read_excel('File_raw.xlsx', header=0, usecols="A,D,E", names=['Sample_Name', 'num_seqs_raw', 'sum_len_raw'])
 
-#Hq file and selecting the required columns
+#Hq file and selecting the required columns #From trimmomatic
 HQ_file= input("Enter HQ file name to proceed=")
 File_HQ = pd.read_table(HQ_file, delimiter = "\t" )
 File_HQ.to_excel('File_HQ.xlsx', index=False, header=True)
